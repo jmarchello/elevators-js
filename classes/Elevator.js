@@ -20,6 +20,23 @@ class Elevator {
     }
   }
 
+  addRequest(request) {
+    let nextStop = this.nextStop();
+    this.stopQueue.push({floor: request.origin, isDestination: false});
+    this.stopQueue.push({floor: request.destination, isDestination: true});
+    if (this.nextStop !== undefined) {
+      if (this.nextStop > this.currentFloor) {
+        this.stopqueue = this.stopqueue.sort(() => {
+          // low to high
+        })
+      } else {
+        this.stopqueue = this.stopqueue.sort(() => {
+          // high to low
+        })
+      }
+    }
+  }
+
   move() {
     if (this.stopQueue.length > 0) {
       if (this.stopQueue[0] > this.currentFloor) {
