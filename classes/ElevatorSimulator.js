@@ -11,3 +11,5 @@ class ElevatorSimulator {
     }
   }
 }
+
+module.exports = ElevatorSimulator;
